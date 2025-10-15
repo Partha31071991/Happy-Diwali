@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ajanta Pharma Diwali Greeting</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --brand-blue: #2E3192;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+    color: var(--brand-blue);
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+  .input-panel {
+    width: 32%;
+    background: #f5f6fa;
+    padding: 22px;
+    overflow-y: auto;
+    border-right: 2px solid #ddd;
+  }
+  .input-panel h2 {
+    color: var(--brand-blue);
+    margin-bottom: 20px;
+  }
+  .input-panel label {
+    font-weight: 600;
+    color: var(--brand-blue);
+  }
+  .preview-panel {
+    width: 68%;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .greeting-card {
+    width: 360px;
+    max-width: 95%;
+    min-height: 580px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    padding: 28px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  .logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+  }
+  .heading {
+    margin-top: 90px;
+    color: var(--brand-blue);
+    font-family: 'Great Vibes', cursive;
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .heading span:first-letter {
+    font-size: 85px;
+  }
+  .doctor-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  }
+  .doctor-name {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--brand-blue);
+    margin-top: 10px;
+  }
+  .speciality {
+    font-size: 17px;
+    color: var(--brand-blue);
+    margin-bottom: 15px;
+  }
+  .wish-message {
+    font-size: 18px;
+    color: var(--brand-blue);
+    font-family: 'Great Vibes', cursive;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  .happy-diwali {
+    display: block;
+    font-size: 40px;
+    font-family: 'Great Vibes', cursive;
+    color: var(--brand-blue);
+    margin-top: 10px;
+  }
+  .brand-banner {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  button {
+    background: var(--brand-blue);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 12px;
+    width: 100%;
+  }
+  select, input[type="file"], input[type="text"] {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+      height: auto;
+    }
+    .container {
+      flex-direction: column;
+    }
+    .input-panel {
+      width: 100%;
+      border-right: none;
+      border-bottom: 2px solid #ddd;
+      padding: 18px;
+    }
+    .preview-panel {
+      width: 100%;
+      padding: 15px;
+    }
+    .greeting-card {
+      width: 90%;
+      min-height: 560px;
+      margin-top: 10px;
+      padding: 20px;
+    }
+    .heading {
+      font-size: 48px;
+    }
+    .heading span:first-letter {
+      font-size: 75px;
+    }
+    .wish-message {
+      font-size: 17px;
+    }
+    button {
+      padding: 14px;
+      font-size: 17px;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="input-panel">
+    <h2>Customize Greeting</h2>
+
+    <label>Doctor Photo:</label>
+    <input type="file" id="doctorPhoto" accept="image/*"><br>
+
+    <label>Doctor Name:</label>
+    <input type="text" id="doctorName" placeholder="Enter Doctor's Name"><br>
+
+    <label>Speciality:</label>
+    <input type="text" id="speciality" placeholder="Enter Speciality"><br>
+
+    <label>Select Brand Reminder:</label>
+    <select id="brandSelect">
+      <option value="1">Brand 1 (Dapalex P)</option>
+      <option value="2">Brand 2 (Dapalex SM)</option>
+    </select>
+
+    <label>Background Image (optional):</label>
+    <input type="file" id="bgImage" accept="image/*"><br>
+
+    <label>Select Language:</label>
+    <select id="language">
+      <option value="en" selected>English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="mr">मराठी</option>
+      <option value="gu">ગુજરાતી</option>
+    </select>
+
+    <button id="downloadBtn">📸 Take Screenshot</button>
+  </div>
+
+  <div class="preview-panel" id="previewPanel">
+    <div class="greeting-card" id="greetingCard">
+      <img src="Picture2 (1).png" class="logo" alt="Ajanta Pharma Logo">
+      <div class="greeting-content">
+        <h1 class="heading">Happy Diwali</h1>
+        <img id="doctorPreview" class="doctor-photo" />
+        <div class="doctor-name" id="namePreview"></div>
+        <div class="speciality" id="specialityPreview"></div>
+        <div class="wish-message" id="wishMessage">
+          We express heartfelt gratitude to you, Doctor, for saving lives and lighting hope in darkness.<br>
+          You are the light that inspires many, glowing like a Diya of compassion and care.<br><br>
+          <span class="happy-diwali">Happy Diwali!</span><br>
+          May this festival bring you immense joy, prosperity, and peace.
+        </div>
+        <img id="brandPreview" class="brand-banner" src="Brand 1.jpg" alt="Brand Reminder">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+  const doctorPhoto = document.getElementById('doctorPhoto');
+  const doctorPreview = document.getElementById('doctorPreview');
+  const nameInput = document.getElementById('doctorName');
+  const namePreview = document.getElementById('namePreview');
+  const specialityInput = document.getElementById('speciality');
+  const specialityPreview = document.getElementById('specialityPreview');
+  const bgImage = document.getElementById('bgImage');
+  const greetingCard = document.getElementById('greetingCard');
+  const brandSelect = document.getElementById('brandSelect');
+  const brandPreview = document.getElementById('brandPreview');
+  const languageSelect = document.getElementById('language');
+
+  doctorPhoto.addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file) doctorPreview.src = URL.createObjectURL(file);
+  });
+  nameInput.addEventListener('input', e => namePreview.textContent = e.target.value);
+  specialityInput.addEventListener('input', e => specialityPreview.textContent = e.target.value);
+
+  bgImage.addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file) greetingCard.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
+    greetingCard.style.backgroundSize = "cover";
+    greetingCard.style.backgroundPosition = "center";
+    greetingCard.style.backgroundRepeat = "no-repeat";
+  });
+
+  brandSelect.addEventListener('change', e => {
+    brandPreview.src = e.target.value === "2" ? "Brand 2.jpg" : "Brand 1.jpg";
+  });
+
+  languageSelect.addEventListener('change', e => {
+    const lang = e.target.value;
+    const msg = document.getElementById('wishMessage');
+    if (lang === 'hi') {
+      msg.innerHTML = "हम डॉक्टरों के प्रति हार्दिक आभार व्यक्त करते हैं, जिन्होंने जीवन बचाकर अंधकार में दीपक जलाए हैं।<br>आप वह प्रकाश हैं जो आशा की किरण जगाते हैं।<br><br><span class='happy-diwali'>हैप्पी दिवाली!</span><br>यह त्यौहार आपके जीवन में खुशियाँ, समृद्धि और शांति लाए।";
+    } else if (lang === 'mr') {
+      msg.innerHTML = "जीवन वाचविणाऱ्या आणि अंधारात दिवे लावणाऱ्या डॉक्टरांचे आम्ही मनःपूर्वक आभार मानतो.<br>आपण ती ज्योत आहात जी आशेचा किरण दाखवते.<br><br><span class='happy-diwali'>हॅपी दिवाळी!</span><br>ही दिवाळी तुमच्या आयुष्यात आनंद, समृद्धी आणि शांतता आणो.";
+    } else if (lang === 'gu') {
+      msg.innerHTML = "જીવન બચાવનાર અને અંધકારમાં દીવો પ્રગટાવનાર ડૉક્ટર પ્રત્યે હૃદયથી આભાર વ્યક્ત કરીએ છીએ.<br>તમે આશાનો પ્રકાશ છો.<br><br><span class='happy-diwali'>હેપ્પી દિવાળી!</span><br>આ તહેવાર તમારા જીવનમાં આનંદ, સમૃદ્ધિ અને શાંતિ લાવે.";
+    } else {
+      msg.innerHTML = "We express heartfelt gratitude to you, Doctor, for saving lives and lighting hope in darkness.<br>You are the light that inspires many, glowing like a Diya of compassion and care.<br><br><span class='happy-diwali'>Happy Diwali!</span><br>May this festival bring you immense joy, prosperity, and peace.";
+    }
+  });
+
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    html2canvas(document.getElementById('greetingCard'), {
+      scale: 2,
+      useCORS: true,
+    }).then(canvas => {
+      const link = document.createElement('a');
+      link.download = 'AjantaPharma_Diwali_Greeting.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  });
+</script>
+</body>
+</html>
